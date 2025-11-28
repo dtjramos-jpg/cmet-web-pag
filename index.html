@@ -7,7 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
         /* Variables y Reset Básico */
@@ -117,8 +117,10 @@
         /* SECCIÓN HÉROE (Principal) */
         /* ---------------------------------- */
         .hero-section {
-            /* IMAGEN DE FONDO DIFERENTE A MEDICINA GENERAL */
-            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('fondo_cmet.jpg') no-repeat center center/cover;
+            /* Ahora intenta .jpeg y .jpg para asegurar la carga */
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
+                        url('fondo_cmet.jpeg'), 
+                        url('fondo_cmet.jpg') no-repeat center center/cover;
             padding: 100px 0;
             text-align: center;
             border-bottom: 5px solid var(--color-principal);
@@ -563,3 +565,44 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
+                    <h4>Centro Médico El Tesoro</h4>
+                    <p style="font-size: 0.9em;">Tu solución integral de salud: Laboratorio, Farmacia y Consultas en un solo lugar confiable en Mixco.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Navegación</h4>
+                    <a href="#inicio">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#ubicacion">Ubicación y Contacto</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <a href="tel:22506601">Llamada: 2250-6601</a>
+                    <a href="https://wa.me/43811538" target="_blank">WhatsApp: 4381-1538</a>
+                    <p>Lun-Vie: 7:00 - 18:00</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/1QcMNy88pA/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/centromedicoeltesoro?igsh=ZXNreTA3MHoxZnJ4" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@centromedicoeltesoro?_t=ZM-90O2xLRAcCu&_r=1" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://whatsapp.com/channel/0029Vb75miRDJ6H8mcOdUy3I" target="_blank" title="Canal de WhatsApp"><i class="fab fa-whatsapp-square"></i></a>
+                        <a href="https://wa.me/43811538" target="_blank" title="WhatsApp Directo"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 Centro Médico y Laboratorio El Tesoro. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/43811538" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
