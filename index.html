@@ -81,6 +81,7 @@
         .header-contact-buttons {
             display: flex;
             gap: 10px;
+            align-items: center; /* Centrar verticalmente los elementos */
         }
 
         .cta-button-header {
@@ -116,6 +117,12 @@
         /* ---------------------------------- */
         /* ESTILOS ADICIONALES PARA REDES EN EL HEADER */
         /* ---------------------------------- */
+        .follow-text { /* NUEVO ESTILO: Texto Síguenos */
+            font-weight: 500;
+            color: var(--color-principal);
+            padding-right: 5px;
+        }
+
         .social-icon-header {
             display: inline-flex;
             align-items: center;
@@ -141,11 +148,18 @@
             color: #000000; /* Negro TikTok */
         }
         
+        .whatsapp-channel-btn { /* NUEVO COLOR: Canal de WhatsApp */
+            color: #25D366; 
+        }
+
         /* Aseguramos que solo el botón de WhatsApp y Call tengan el relleno completo */
         @media (max-width: 900px) {
             .social-icon-header {
                 font-size: 1.2em; /* Íconos un poco más pequeños en móvil */
                 padding: 0 3px;
+            }
+            .follow-text {
+                display: none; /* Ocultar "Síguenos" en móviles pequeños */
             }
         }
         /* ---------------------------------- */
@@ -431,9 +445,13 @@
             </nav>
 
             <div class="header-contact-buttons">
+                <span class="follow-text">Síguenos:</span>
+                
                 <a href="https://www.facebook.com/share/1QcMNy88pA/" class="social-icon-header facebook-btn" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/centromedicoeltesoro?igsh=ZXNreTA3MHoxZnJ4" class="social-icon-header instagram-btn" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.tiktok.com/@centromedicoeltesoro?_t=ZM-90O2xLRAcCu&_r=1" class="social-icon-header tiktok-btn" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://whatsapp.com/channel/0029Vb75miRDJ6H8mcOdUy3I" class="social-icon-header whatsapp-channel-btn" target="_blank" title="Canal de WhatsApp"><i class="fab fa-whatsapp-square"></i></a>
+                
                 <a href="tel:22506601" class="cta-button-header call-button">
                     <i class="fas fa-phone-alt"></i> Llámanos
                 </a>
@@ -447,7 +465,8 @@
     <section id="inicio" class="hero-section">
         <div class="container">
             <h1>Centro Médico y Laboratorio El Tesoro</h1>
-            <p>Cuidamos tu salud con atención profesional y accesible, ponemos a tu disposición servicios médicos de calidad, realizados por especialistas comprometidos con tu bienestar y el de tu familia. ¡Tu salud es nuestro mayor tesoro!</p>
+            <p>Cuidamos tu salud con atención profesional y accesible, ponemos a tu disposición servicios médicos de calidad, realizados por especialistas comprometidos con tu bienestar y el de tu familia.</p>
+            <p style="font-weight: 700; font-size: 1.5em; color: var(--color-principal); margin-top: -15px;">¡Tu salud es nuestro mayor tesoro!</p>
             <a href="#servicios" class="cta-button-header call-button" style="margin-top: 15px;">Explora Nuestros Servicios</a>
         </div>
     </section>
@@ -458,6 +477,15 @@
             <p class="section-subtitle">Atención integral y personalizada, garantizando diagnósticos precisos por profesionales con experiencia.</p>
 
             <div class="services-grid">
+
+                <div class="service-card">
+                    <img src="farmacia.jpg" alt="Farmacia" class="card-image"> 
+                    <div class="card-content">
+                        <h3>Farmacia</h3>
+                        <p>Contamos con medicamentos de calidad y personal capacitado para atender tus necesidades de salud.</p>
+                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Consulta Vía WhatsApp</a>
+                    </div>
+                </div>
                 
                 <div class="service-card">
                     <img src="medicina_general.jpg" alt="Medicina General" class="card-image">
@@ -623,6 +651,7 @@
                     <a href="tel:22506601">Llamada: 2250-6601</a>
                     <a href="https://wa.me/43811538" target="_blank">WhatsApp: 4381-1538</a>
                     <p>Lun-Vie: 7:00 - 18:00</p>
+                    <p>Sábados: 8:00 - 13:00</p>
                 </div>
 
                 <div class="footer-column">
