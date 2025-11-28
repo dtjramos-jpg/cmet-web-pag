@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Médico y Laboratorio El Tesoro - Solución Integral de Salud</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* Variables y Reset Básico */
+        :root {
+            --color-principal: #2C5D9F; /* Azul del Logo para énfasis */
+            --color-secundario: #f7f9fc; /* Fondo claro para secciones */
+            --color-texto: #333333;
+            --color-texto-claro: #ffffff;
+            --color-borde: #dddddd;
+            --font-principal: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-principal);
+            line-height: 1.6;
+            color: var(--color-texto);
+            background-color: var(--color-texto-claro);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-principal);
+        }
+
+        /* ---------------------------------- */
+        /* HEADER (Encabezado Fijo) */
+        /* ---------------------------------- */
+        .main-header {
+            background-color: var(--color-texto-claro);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo img {
+            height: 40px; /* Tamaño del logo ajustado para el header */
+            width: auto;
+        }
+
+        .nav-links a {
+            padding: 10px 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-principal);
+        }
+
+        /* Botones de Contacto en Header */
+        .header-contact-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cta-button-header {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            color: var(--color-texto-claro);
+        }
+
+        .cta-button-header i {
+            margin-right: 8px;
+        }
+
+        .whatsapp-button {
+            background-color: #25D366; /* Verde WhatsApp */
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+        }
+
+        .call-button {
+            background-color: var(--color-principal);
+        }
+
+        .call-button:hover {
+            background-color: #1a437a;
+        }
+
+        /* ---------------------------------- */
+        /* SECCIÓN HÉROE (Principal) */
+        /* ---------------------------------- */
+        .hero-section {
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('medicina_general.jpg') no-repeat center center/cover;
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--color-principal);
+        }
+
+        .hero-section h1 {
+            font-size: 3em;
+            color: var(--color-principal);
+            margin-bottom: 10px;
+        }
+
+        .hero-section p {
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        /* ---------------------------------- */
+        /* SECCIÓN SERVICIOS (Cuadrícula Profesional) */
+        /* ---------------------------------- */
+        .services-section {
+            padding: 60px 0;
+            background-color: var(--color-secundario);
+        }
+
+        .section-title {
+            color: var(--color-principal);
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            color: #555;
+            text-align: center;
+            font-size: 1.1em;
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--color-texto-claro);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--color-principal); /* Borde de color en la imagen */
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            color: var(--color-principal);
+            margin-top: 0;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            color: #666;
+            font-size: 1em;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: block; 
+            background-color: var(--color-principal);
+            color: var(--color-texto-claro);
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #1a437a;
+        }
+
+        /* ---------------------------------- */
+        /* UBICACIÓN Y MAPAS */
+        /* ---------------------------------- */
+        .map-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .map-buttons a {
+            flex-grow: 1;
+            text-align: center;
+            color: var(--color-texto-claro);
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        .map-buttons a:hover {
+            opacity: 0.9;
+        }
+
+        .google-maps-btn {
+            background-color: #4285F4; /* Color de Google */
+        }
+
+        .waze-btn {
+            background-color: #3CC7FF; /* Color de Waze */
+        }
+        
+        /* ---------------------------------- */
+        /* FOOTER (Pie de Página) */
+        /* ---------------------------------- */
+        .main-footer {
+            background-color: var(--color-principal);
+            color: var(--color-texto-claro);
+            padding: 40px 0 20px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 30px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column h4 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .footer-column p, .footer-column a {
+            color: rgba(255, 255, 255, 0.8);
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--color-texto-claro);
+        }
+
+        .social-icons a {
+            margin-right: 15px;
+            font-size: 1.5em;
+            color: var(--color-texto-claro);
+        }
+
+        /* 5 iconos: Ajuste para que se vean bien */
+        .social-icons {
+            display: flex;
+        }
+        
+        .copyright {
+            text-align: center;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ---------------------------------- */
+        /* WHATSAPP FLOTANTE */
+        /* ---------------------------------- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25D366; /* Verde WhatsApp */
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1500; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+        }
+
+        /* ---------------------------------- */
+        /* RESPONSIVIDAD (Adaptación a Móviles) */
+        /* ---------------------------------- */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none; 
+            }
+            .header-content {
+                justify-content: space-between; 
+            }
+            .header-contact-buttons {
+                gap: 5px;
+            }
+            .hero-section h1 {
+                font-size: 2em;
+            }
+            .services-grid {
+                grid-template-columns: 1fr; 
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr); 
+            }
+            .whatsapp-float {
+                right: 20px;
+                bottom: 20px;
+            }
+            .map-buttons {
+                flex-direction: column;
+            }
+        }
+        @media (max-width: 500px) {
+            .footer-grid {
+                grid-template-columns: 1fr; 
+            }
+            .header-contact-buttons {
+                /* Ocultar botón de llamada para dejar espacio en móviles pequeños */
+                display: none; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="#inicio" class="logo">
+                <img src="Manta CMET (1).jpg" alt="Logo Centro Médico El Tesoro">
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#ubicacion">Ubicación</a>
+            </nav>
+
+            <div class="header-contact-buttons">
+                <a href="tel:22506601" class="cta-button-header call-button">
+                    <i class="fas fa-phone-alt"></i> Llámanos
+                </a>
+                <a href="https://wa.me/43811538" class="cta-button-header whatsapp-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <section id="inicio" class="hero-section">
+        <div class="container">
+            <h1>Centro Médico y Laboratorio El Tesoro</h1>
+            <p>Tu solución integral de salud: Laboratorio, Farmacia y Consultas en un solo lugar confiable.</p>
+            <a href="#servicios" class="cta-button-header call-button" style="margin-top: 15px;">Explora Nuestros Servicios</a>
+        </div>
+    </section>
+
+    <section id="servicios" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios Especializados</h2>
+            <p class="section-subtitle">Atención integral y personalizada, garantizando diagnósticos precisos por profesionales con experiencia.</p>
+
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <img src="medicina_general.jpg" alt="Medicina General" class="card-image">
+                    <div class="card-content">
+                        <h3>Medicina General</h3>
+                        <p>Atención médica integral para toda la familia y manejo de enfermedades comunes.</p>
+                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="laboratorio_clínico.jpg" alt="Laboratorio Clínico" class="card-image">
+                    <div class="card-content">
+                        <h3>Laboratorio Clínico</h3>
+                        <p>Exámenes confiables y rápidos con tecnología avanzada para diagnósticos precisos.</p>
+                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="ultrasonidos.jpg" alt="Ultrasonidos" class="card-image">
+                    <div class="card-content">
+                        <h3>Ultrasonidos y Rayos X</h3>
+                        <p>Imágenes diagnósticas de alta precisión, esenciales para un diagnóstico completo y oportuno.</p>
+                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="pediatría.jpg" alt="Pediatría" class="card-image">
+                    <div class="card-content">
+                        <h3>Pediatría</h3>
+                        <p>Atención especializada para niños y adolescentes con calidez y profesionalismo.</p>
+                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="ginecología.jpg" alt="Ginecología" class="card-image">
+                    <div class="card-content">
+                        <h3>Ginecología</h3>
+                        <p>Cuidados y controles de salud femenina con sensibilidad y equipos modernos.</p>
+                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="traumatología.jpg" alt="Traumatología" class="card-image">
+                    <div class="card-content">
+                        <h3>Traumatología</h3>
+                        <p>Diagnóstico y tratamiento de lesiones musculoesqueléticas y dolor crónico.</p>
+                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="gastroenterología.jpg" alt="Gastroenterología" class="card-image">
+                    <div class="card-content">
+                        <h3>Gastroenterología</h3>
+                        <p>Salud digestiva, endoscopías y prevención de enfermedades del tracto digestivo.</p>
+                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                    </div>
+                </div>
+
+                 <div class="service-card">
+                    <img src="geriatría.jpg" alt="Geriatría" class="card-image">
+                    <div class="card-content">
+                        <h3>Geriatría</h3>
+                        <p>Atención integral especializada en la salud y bienestar de los adultos mayores.</p>
+                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="nutricionista.jpg" alt="Nutricionista" class="card-image">
+                    <div class="card-content">
+                        <h3>Nutricionista</h3>
+                        <p>Planes de alimentación personalizados para mejorar su salud y calidad de vida.</p>
+                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="medicina_interna.jpg" alt="Medicina Interna" class="card-image">
+                    <div class="card-content">
+                        <h3>Medicina Interna</h3>
+                        <p>Diagnóstico y tratamiento de enfermedades complejas en adultos y atención hospitalaria.</p>
+                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <img src="endoscopías_colonoscopías.jpg" alt="Endoscopías/Colonoscopías" class="card-image">
+                    <div class="card-content">
+                        <h3>Endoscopías y Colonoscopías</h3>
+                        <p>Procedimientos diagnósticos y terapéuticos no invasivos para el tracto digestivo.</p>
+                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="ubicacion" class="services-section" style="background-color: #ffffff;">
+        <div class="container">
+            <h2 class="section-title" style="color: #333;">Ubícanos y Contáctanos</h2>
+            <div class="services-grid" style="grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div style="text-align: left; padding: 20px;">
+                    <h3>Información de Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt" style="color: var(--color-principal);"></i> Dirección: 4 calle 6-58, Mixco 01057</p>
+                    <p><i class="fas fa-phone-alt" style="color: var(--color-principal);"></i> Teléfono: 2250-6601</p>
+                    <p><i class="fab fa-whatsapp" style="color: var(--color-principal);"></i> WhatsApp: 4381-1538</p>
+                    
+                    <h3 style="margin-top: 20px;">Horarios de Atención</h3>
+                    <p><i class="far fa-clock" style="color: var(--color-principal);"></i> Lunes a Viernes: 7:00 - 18:00</p>
+                    <p><i class="far fa-clock" style="color: var(--color-principal);"></i> Sábados: 8:00 - 13:00</p>
+
+                    <a href="tel:22506601" class="cta-button call-button" style="display: block; margin-top: 25px; background-color: var(--color-principal);">
+                        <i class="fas fa-phone-alt"></i> Llámanos Ahora: 2250-6601
+                    </a>
+                    <div class="map-buttons">
+                        <a href="https://maps.google.com/?cid=11674454284139874411&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="google-maps-btn">
+                            <i class="fas fa-map-marker-alt"></i> Abrir en Google Maps
+                        </a>
+                        <a href="https://ul.waze.com/ul?place=ChIJm_nOjuyjiYURa8ixSFH-A6I&ll=14.62718420%2C-90.58384720&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank" class="waze-btn">
+                            <i class="fab fa-waze"></i> Navegar con Waze
+                        </a>
+                    </div>
+
+                </div>
+                <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Centro%20M%C3%A9dico%20El%20Tesoro%204%20calle%206-58,%20Mixco%2001057&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="350" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Centro Médico El Tesoro</h4>
+                    <p style="font-size: 0.9em;">Tu solución integral de salud: Laboratorio, Farmacia y Consultas en un solo lugar confiable en Mixco.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Navegación</h4>
+                    <a href="#inicio">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#ubicacion">Ubicación y Contacto</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <a href="tel:22506601">Llamada: 2250-6601</a>
+                    <a href="https://wa.me/43811538" target="_blank">WhatsApp: 4381-1538</a>
+                    <p>Lun-Vie: 7:00 - 18:00</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/1QcMNy88pA/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/centromedicoeltesoro" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@centromedicoeltesoro?_t=ZM-90O2xLRAcCu&_r=1" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://whatsapp.com/channel/0029Vb75miRDJ6H8mcOdUy3I" target="_blank" title="Canal de WhatsApp"><i class="fab fa-whatsapp-square"></i></a>
+                        <a href="https://wa.me/43811538" target="_blank" title="WhatsApp Directo"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 Centro Médico y Laboratorio El Tesoro. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/43811538" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
