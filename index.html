@@ -114,6 +114,45 @@
         }
 
         /* ---------------------------------- */
+        /* ESTILOS ADICIONALES PARA REDES EN EL HEADER */
+        /* ---------------------------------- */
+        .social-icon-header {
+            display: inline-flex;
+            align-items: center;
+            font-size: 1.5em; /* Tamaño del ícono */
+            padding: 0 5px; 
+            transition: opacity 0.3s;
+        }
+
+        .social-icon-header:hover {
+            opacity: 0.8;
+        }
+        
+        /* Colores de Marca */
+        .facebook-btn {
+            color: #1877F2; /* Azul Facebook */
+        }
+
+        .instagram-btn {
+            color: #E4405F; /* Rosa/Rojo Instagram */
+        }
+
+        .tiktok-btn {
+            color: #000000; /* Negro TikTok */
+        }
+        
+        /* Aseguramos que solo el botón de WhatsApp y Call tengan el relleno completo */
+        @media (max-width: 900px) {
+            .social-icon-header {
+                font-size: 1.2em; /* Íconos un poco más pequeños en móvil */
+                padding: 0 3px;
+            }
+        }
+        /* ---------------------------------- */
+        /* FIN ESTILOS ADICIONALES PARA REDES EN EL HEADER */
+        /* ---------------------------------- */
+
+        /* ---------------------------------- */
         /* SECCIÓN HÉROE (Principal) */
         /* ---------------------------------- */
         .hero-section {
@@ -392,6 +431,9 @@
             </nav>
 
             <div class="header-contact-buttons">
+                <a href="https://www.facebook.com/share/1QcMNy88pA/" class="social-icon-header facebook-btn" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/centromedicoeltesoro?igsh=ZXNreTA3MHoxZnJ4" class="social-icon-header instagram-btn" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@centromedicoeltesoro?_t=ZM-90O2xLRAcCu&_r=1" class="social-icon-header tiktok-btn" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
                 <a href="tel:22506601" class="cta-button-header call-button">
                     <i class="fas fa-phone-alt"></i> Llámanos
                 </a>
@@ -405,7 +447,7 @@
     <section id="inicio" class="hero-section">
         <div class="container">
             <h1>Centro Médico y Laboratorio El Tesoro</h1>
-            <p>Tu solución integral de salud: Laboratorio, Farmacia y Consultas en un solo lugar confiable.</p>
+            <p>Cuidamos tu salud con atención profesional y accesible, ponemos a tu disposición servicios médicos de calidad, realizados por especialistas comprometidos con tu bienestar y el de tu familia. ¡Tu salud es nuestro mayor tesoro!</p>
             <a href="#servicios" class="cta-button-header call-button" style="margin-top: 15px;">Explora Nuestros Servicios</a>
         </div>
     </section>
@@ -522,7 +564,7 @@
 
     <section id="ubicacion" class="services-section" style="background-color: #ffffff;">
         <div class="container">
-            <h2 class="section-title" style="color: #333;">Ubícanos y Contáctanos</h2>
+            <h2 class="section-title" style="color: #333;">Estamos cerca de ti.</h2>
             <div class="services-grid" style="grid-template-columns: 1fr 1fr; gap: 40px;">
                 <div style="text-align: left; padding: 20px;">
                     <h3>Información de Contacto</h3>
