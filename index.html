@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Centro Médico y Laboratorio El Tesoro en Mixco | Citas, Laboratorio y Farmacia</title>
-    
-    <meta name="description" content="Centro Médico y Laboratorio El Tesoro en Mixco. Ofrecemos medicina general, laboratorio clínico, ultrasonidos, farmacia y más. ¡Agenda tu cita hoy!">
+    <title>Centro Médico y Laboratorio El Tesoro - Solución Integral de Salud</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
@@ -156,23 +153,31 @@
             color: #25D366; 
         }
 
+        /* Aseguramos que solo el botón de WhatsApp y Call tengan el relleno completo */
+        @media (max-width: 900px) {
+            .social-icon-header {
+                font-size: 1.2em; /* Íconos un poco más pequeños en móvil */
+                padding: 0 3px;
+            }
+            .follow-text {
+                display: none; /* Ocultar "Síguenos" en móviles pequeños */
+            }
+        }
         /* ---------------------------------- */
         /* FIN ESTILOS ADICIONALES PARA REDES EN EL HEADER */
         /* ---------------------------------- */
 
         /* ---------------------------------- */
-        /* SECCIÓN HÉROE (Principal) - CÓDIGO CORREGIDO PARA RENDIMIENTO MÓVIL (LCP) */
+        /* SECCIÓN HÉROE (Principal) */
         /* ---------------------------------- */
         .hero-section {
-            /* Se corrigió la capa de color para que sea más clara (0.9) */
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
-                        /* Se eliminó el archivo .jpeg para que solo cargue uno */
+            /* Ahora intenta .jpeg y .jpg para asegurar la carga */
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
+                        url('fondo_cmet.jpeg'), 
                         url('fondo_cmet.jpg') no-repeat center center/cover;
             padding: 100px 0;
             text-align: center;
             border-bottom: 5px solid var(--color-principal);
-            /* Línea clave para mejorar la carga en móviles */
-            background-attachment: fixed; 
         }
 
         .hero-section h1 {
@@ -593,32 +598,34 @@
                 <div style="text-align: left; padding: 20px;">
                     <h3>Información de Contacto</h3>
                     <p><i class="fas fa-map-marker-alt" style="color: var(--color-principal);"></i> Dirección: 4 calle 6-58, Mixco 01057</p>
-                    <p><i class="fas fa-phone-alt" style="color: var(--color-principal);"></i> Teléfono: <a href="tel:22506601">2250-6601</a></p>
-                    <p><i class="fab fa-whatsapp" style="color: var(--color-principal);"></i> WhatsApp: <a href="https://wa.me/43811538" target="_blank">4381-1538</a></p>
+                    <p><i class="fas fa-phone-alt" style="color: var(--color-principal);"></i> Teléfono: 2250-6601</p>
+                    <p><i class="fab fa-whatsapp" style="color: var(--color-principal);"></i> WhatsApp: 4381-1538</p>
                     
-                    <h3 style="margin-top: 25px;">Horarios de Atención</h3>
-                    <p><i class="fas fa-clock" style="color: var(--color-principal);"></i> Lunes a Viernes: 7:00 AM - 6:00 PM</p>
-                    <p><i class="fas fa-clock" style="color: var(--color-principal);"></i> Sábados: 7:00 AM - 1:00 PM</p>
-                    
+                    <h3 style="margin-top: 20px;">Horarios de Atención</h3>
+                    <p><i class="far fa-clock" style="color: var(--color-principal);"></i> Lunes a Viernes: 7:00 - 18:00</p>
+                    <p><i class="far fa-clock" style="color: var(--color-principal);"></i> Sábados: 8:00 - 13:00</p>
+
+                    <a href="tel:22506601" class="cta-button call-button" style="display: block; margin-top: 25px; background-color: var(--color-principal);">
+                        <i class="fas fa-phone-alt"></i> Llámanos Ahora: 2250-6601
+                    </a>
                     <div class="map-buttons">
-                        <a href="https://maps.app.goo.gl/954y2R2vD2xV31S79" class="google-maps-btn" target="_blank">
-                            <i class="fas fa-map-marked-alt"></i> Ver en Google Maps
+                        <a href="https://maps.app.goo.gl/XTpAUSxutpqLmxUR8" target="_blank" class="google-maps-btn">
+                            <i class="fas fa-map-marker-alt"></i> Abrir en Google Maps
                         </a>
-                        <a href="https://waze.com/ul/hn542hhrz7" class="waze-btn" target="_blank">
+                        <a href="https://ul.waze.com/ul?place=ChIJm_nOjuyjiYURa8ixSFH-A6I&ll=14.62718420%2C-90.58384720&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank" class="waze-btn">
                             <i class="fab fa-waze"></i> Navegar con Waze
                         </a>
                     </div>
-                </div>
 
-                <div style="padding: 20px;">
+                </div>
+                <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.855013149492!2d-90.58784302528741!3d14.717056085818315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a19c623c1031%3A0xc682255740441d63!2sCentro%20M%C3%A9dico%20y%20Laboratorio%20El%20Tesoro!5e0!3m2!1ses!2sgt!4v1709230537443!5m2!1ses!2sgt" 
+                        src="https://maps.google.com/maps?q=Centro%20M%C3%A9dico%20El%20Tesoro%204%20calle%206-58,%20Mixco%2001057&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                         width="100%" 
-                        height="450" 
-                        style="border:0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);" 
+                        height="350" 
+                        style="border:0;" 
                         allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
+                        loading="lazy">
                     </iframe>
                 </div>
             </div>
@@ -628,25 +635,24 @@
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                
                 <div class="footer-column">
                     <h4>Centro Médico El Tesoro</h4>
-                    <p>Brindamos soluciones integrales de salud, con enfoque en la calidad, accesibilidad y bienestar de nuestros pacientes en Mixco.</p>
+                    <p style="font-size: 0.9em;">Tu solución integral de salud: Laboratorio, Farmacia y Consultas en un solo lugar confiable en Mixco.</p>
                 </div>
-
+                
                 <div class="footer-column">
-                    <h4>Servicios Principales</h4>
-                    <a href="#servicios">Medicina General</a>
-                    <a href="#servicios">Laboratorio Clínico</a>
-                    <a href="#servicios">Ultrasonidos</a>
-                    <a href="#servicios">Farmacia</a>
+                    <h4>Navegación</h4>
+                    <a href="#inicio">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#ubicacion">Ubicación y Contacto</a>
                 </div>
-
+                
                 <div class="footer-column">
-                    <h4>Información de Contacto</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 4 calle 6-58, Mixco 01057</p>
-                    <p><i class="fas fa-phone-alt"></i> <a href="tel:22506601">2250-6601</a></p>
-                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/43811538" target="_blank">4381-1538</a></p>
+                    <h4>Contacto</h4>
+                    <a href="tel:22506601">Llamada: 2250-6601</a>
+                    <a href="https://wa.me/43811538" target="_blank">WhatsApp: 4381-1538</a>
+                    <p>Lun-Vie: 7:00 - 18:00</p>
+                    <p>Sábados: 8:00 - 13:00</p>
                 </div>
 
                 <div class="footer-column">
@@ -655,17 +661,18 @@
                         <a href="https://www.facebook.com/share/1QcMNy88pA/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/centromedicoeltesoro?igsh=ZXNreTA3MHoxZnJ4" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.tiktok.com/@centromedicoeltesoro?_t=ZM-90O2xLRAcCu&_r=1" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://wa.me/43811538" target="_blank" title="WhatsApp Directo"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://whatsapp.com/channel/0029Vb75miRDJ6H8mcOdUy3I" target="_blank" title="Canal de Novedades"><i class="fas fa-bullhorn"></i></a>
+                        <a href="https://wa.me/43811538" target="_blank" title="WhatsApp Directo"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
-            
-            <p class="copyright">© 2025 Centro Médico y Laboratorio El Tesoro. Todos los derechos reservados.</p>
+            <div class="copyright">
+                © 2025 Centro Médico y Laboratorio El Tesoro. Todos los derechos reservados.
+            </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/43811538" class="whatsapp-float" target="_blank" title="Chatea con nosotros">
+    <a href="https://wa.me/43811538" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
