@@ -171,15 +171,9 @@
         /* SECCIÓN HÉROE (Principal) */
         /* ---------------------------------- */
         .hero-section {
-            /* **SOLUCIÓN DEFINITIVA Y FORZADA:** 1. Usa el archivo JPG original (alto tamaño/calidad).
-               2. El parámetro '?v=4' fuerza al navegador a recargar el archivo y no usar el caché. */
-            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
-                              url('fondo_cmet.jpg?v=4'); 
+            /* SOLUCIÓN FINAL: Quitamos la imagen de fondo para evitar la pixelación y errores. */
+            background-color: var(--color-texto-claro); /* Fondo blanco limpio */
             
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover; /* Esto garantiza que cubra toda el área. */
-
             padding: 100px 0;
             text-align: center;
             border-bottom: 5px solid var(--color-principal);
