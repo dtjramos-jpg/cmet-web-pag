@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro Médico y Laboratorio El Tesoro - Solución Integral de Salud</title>
+    
+    <title>Centro Médico y Laboratorio El Tesoro en Mixco | Citas, Laboratorio y Farmacia</title>
+    
+    <meta name="description" content="Centro Médico y Laboratorio El Tesoro en Mixco. Ofrecemos medicina general, laboratorio clínico, ultrasonidos, farmacia y más. ¡Agenda tu cita hoy!">
     
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
@@ -63,7 +66,7 @@
         }
 
         .logo img {
-            height: 40px; /* Tamaño del logo ajustado para el header */
+            height: 40px; 
             width: auto;
         }
 
@@ -81,7 +84,7 @@
         .header-contact-buttons {
             display: flex;
             gap: 10px;
-            align-items: center; /* Centrar verticalmente los elementos */
+            align-items: center; 
         }
 
         .cta-button-header {
@@ -99,7 +102,7 @@
         }
 
         .whatsapp-button {
-            background-color: #25D366; /* Verde WhatsApp */
+            background-color: #25D366; 
         }
 
         .whatsapp-button:hover {
@@ -114,10 +117,8 @@
             background-color: #1a437a;
         }
 
-        /* ---------------------------------- */
         /* ESTILOS ADICIONALES PARA REDES EN EL HEADER */
-        /* ---------------------------------- */
-        .follow-text { /* NUEVO ESTILO: Texto Síguenos */
+        .follow-text { 
             font-weight: 500;
             color: var(--color-principal);
             padding-right: 5px;
@@ -126,7 +127,7 @@
         .social-icon-header {
             display: inline-flex;
             align-items: center;
-            font-size: 1.5em; /* Tamaño del ícono */
+            font-size: 1.5em; 
             padding: 0 5px; 
             transition: opacity 0.3s;
         }
@@ -135,49 +136,32 @@
             opacity: 0.8;
         }
         
-        /* Colores de Marca */
         .facebook-btn {
-            color: #1877F2; /* Azul Facebook */
+            color: #1877F2; 
         }
 
         .instagram-btn {
-            color: #E4405F; /* Rosa/Rojo Instagram */
+            color: #E4405F; 
         }
 
         .tiktok-btn {
-            color: #000000; /* Negro TikTok */
+            color: #000000; 
         }
         
-        /* El Megáfono también usa el color de WhatsApp */
         .whatsapp-channel-btn { 
             color: #25D366; 
         }
-
-        /* Aseguramos que solo el botón de WhatsApp y Call tengan el relleno completo */
-        @media (max-width: 900px) {
-            .social-icon-header {
-                font-size: 1.2em; /* Íconos un poco más pequeños en móvil */
-                padding: 0 3px;
-            }
-            .follow-text {
-                display: none; /* Ocultar "Síguenos" en móviles pequeños */
-            }
-        }
-        /* ---------------------------------- */
-        /* FIN ESTILOS ADICIONALES PARA REDES EN EL HEADER */
-        /* ---------------------------------- */
 
         /* ---------------------------------- */
         /* SECCIÓN HÉROE (Principal) */
         /* ---------------------------------- */
         .hero-section {
-            /* Ahora intenta .jpeg y .jpg para asegurar la carga */
-            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
-                        url('fondo_cmet.jpeg'), 
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
                         url('fondo_cmet.jpg') no-repeat center center/cover;
             padding: 100px 0;
             text-align: center;
             border-bottom: 5px solid var(--color-principal);
+            background-attachment: fixed; 
         }
 
         .hero-section h1 {
@@ -197,7 +181,7 @@
         }
 
         /* ---------------------------------- */
-        /* SECCIÓN SERVICIOS (Cuadrícula Profesional) */
+        /* SECCIÓN SERVICIOS */
         /* ---------------------------------- */
         .services-section {
             padding: 60px 0;
@@ -242,7 +226,7 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-bottom: 3px solid var(--color-principal); /* Borde de color en la imagen */
+            border-bottom: 3px solid var(--color-principal); 
         }
 
         .card-content {
@@ -254,7 +238,6 @@
             margin-top: 0;
             font-size: 1.5em;
             margin-bottom: 10px;
-            /* Títulos de servicio centrados */
             text-align: center;
         }
 
@@ -283,12 +266,50 @@
         }
 
         /* ---------------------------------- */
-        /* UBICACIÓN Y MAPAS */
+        /* UBICACIÓN Y MAPAS (ESTILOS FINALES) */
         /* ---------------------------------- */
+        .location-grid { 
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 20px 0; 
+        }
+
+        .location-info h3 {
+             color: var(--color-principal);
+             margin-bottom: 10px;
+        }
+
+        .location-info p {
+             margin-bottom: 12px;
+             display: flex;
+             align-items: center;
+        }
+
+        .location-info i {
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
+        
+        /* Estilos para el Mapa */
+        .map-container {
+            padding: 0; 
+        }
+
+        .map-container iframe {
+            display: block;
+            width: 100%;
+            max-width: 100%; 
+            height: 450px;
+            border: 0; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
         .map-buttons {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .map-buttons a {
@@ -306,11 +327,11 @@
         }
 
         .google-maps-btn {
-            background-color: #4285F4; /* Color de Google */
+            background-color: #4285F4; 
         }
 
         .waze-btn {
-            background-color: #3CC7FF; /* Color de Waze */
+            background-color: #3CC7FF; 
         }
         
         /* ---------------------------------- */
@@ -354,7 +375,6 @@
             color: var(--color-texto-claro);
         }
 
-        /* 5 iconos: Ajuste para que se vean bien */
         .social-icons {
             display: flex;
         }
@@ -374,7 +394,7 @@
             height: 60px;
             bottom: 40px;
             right: 40px;
-            background-color: #25D366; /* Verde WhatsApp */
+            background-color: #25D366; 
             color: #FFF;
             border-radius: 50px;
             text-align: center;
@@ -391,7 +411,7 @@
         }
 
         /* ---------------------------------- */
-        /* RESPONSIVIDAD (Adaptación a Móviles) */
+        /* RESPONSIVIDAD (Media Queries para Móviles) */
         /* ---------------------------------- */
         @media (max-width: 900px) {
             .nav-links {
@@ -409,6 +429,12 @@
             .services-grid {
                 grid-template-columns: 1fr; 
             }
+            /* AJUSTE FINAL UBICACIÓN: Pasa a una sola columna */
+            .location-grid { 
+                grid-template-columns: 1fr; 
+                gap: 20px;
+            }
+            /* El Footer pasa a dos columnas */
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr); 
             }
@@ -421,11 +447,12 @@
             }
         }
         @media (max-width: 500px) {
+            /* El Footer pasa a una columna en móviles muy pequeños */
             .footer-grid {
                 grid-template-columns: 1fr; 
             }
             .header-contact-buttons {
-                /* Ocultar botón de llamada para dejar espacio en móviles pequeños */
+                /* Ocultar botón de llamada para dejar espacio en móviles muy pequeños */
                 display: none; 
             }
         }
@@ -594,38 +621,34 @@
     <section id="ubicacion" class="services-section" style="background-color: #ffffff;">
         <div class="container">
             <h2 class="section-title" style="color: #333;">Estamos cerca de ti.</h2>
-            <div class="services-grid" style="grid-template-columns: 1fr 1fr; gap: 40px;">
-                <div style="text-align: left; padding: 20px;">
-                    <h3>Información de Contacto</h3>
+            
+            <div class="location-grid"> 
+                <div class="location-info">
+                    <h3 style="margin-bottom: 15px;">Información de Contacto</h3>
                     <p><i class="fas fa-map-marker-alt" style="color: var(--color-principal);"></i> Dirección: 4 calle 6-58, Mixco 01057</p>
-                    <p><i class="fas fa-phone-alt" style="color: var(--color-principal);"></i> Teléfono: 2250-6601</p>
-                    <p><i class="fab fa-whatsapp" style="color: var(--color-principal);"></i> WhatsApp: 4381-1538</p>
+                    <p><i class="fas fa-phone-alt" style="color: var(--color-principal);"></i> Teléfono: <a href="tel:22506601">2250-6601</a></p>
+                    <p><i class="fab fa-whatsapp" style="color: var(--color-principal);"></i> WhatsApp: <a href="https://wa.me/43811538" target="_blank">4381-1538</a></p>
                     
-                    <h3 style="margin-top: 20px;">Horarios de Atención</h3>
-                    <p><i class="far fa-clock" style="color: var(--color-principal);"></i> Lunes a Viernes: 7:00 - 18:00</p>
-                    <p><i class="far fa-clock" style="color: var(--color-principal);"></i> Sábados: 8:00 - 13:00</p>
-
-                    <a href="tel:22506601" class="cta-button call-button" style="display: block; margin-top: 25px; background-color: var(--color-principal);">
-                        <i class="fas fa-phone-alt"></i> Llámanos Ahora: 2250-6601
-                    </a>
+                    <h3 style="margin-top: 25px;">Horarios de Atención</h3>
+                    <p><i class="fas fa-clock" style="color: var(--color-principal);"></i> Lunes a Viernes: 7:00 AM - 6:00 PM</p>
+                    <p><i class="fas fa-clock" style="color: var(--color-principal);"></i> Sábados: 7:00 AM - 1:00 PM</p>
+                    
                     <div class="map-buttons">
-                        <a href="https://maps.app.goo.gl/XTpAUSxutpqLmxUR8" target="_blank" class="google-maps-btn">
-                            <i class="fas fa-map-marker-alt"></i> Abrir en Google Maps
+                        <a href="https://maps.app.goo.gl/y2P94d5mYgWwGjQd9" class="google-maps-btn" target="_blank">
+                            <i class="fas fa-map-marked-alt"></i> Ver en Google Maps
                         </a>
-                        <a href="https://ul.waze.com/ul?place=ChIJm_nOjuyjiYURa8ixSFH-A6I&ll=14.62718420%2C-90.58384720&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank" class="waze-btn">
+                        <a href="https://waze.com/ul/hn542hhrz7" class="waze-btn" target="_blank">
                             <i class="fab fa-waze"></i> Navegar con Waze
                         </a>
                     </div>
-
                 </div>
-                <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+
+                <div class="map-container">
                     <iframe 
-                        src="https://maps.google.com/maps?q=Centro%20M%C3%A9dico%20El%20Tesoro%204%20calle%206-58,%20Mixco%2001057&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-                        width="100%" 
-                        height="350" 
-                        style="border:0;" 
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d389.28475267440474!2d-90.5796288599401!3d14.64687595204439!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85890b396e95a56d%3A0xc6c4f9f74a004b32!2sCentro%20M%C3%A9dico%20El%20Tesoro!5e0!3m2!1ses-419!2sgt!4v1701389278065!5m2!1ses-419!2sgt"
                         allowfullscreen="" 
-                        loading="lazy">
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
             </div>
@@ -635,24 +658,25 @@
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
+                
                 <div class="footer-column">
                     <h4>Centro Médico El Tesoro</h4>
-                    <p style="font-size: 0.9em;">Tu solución integral de salud: Laboratorio, Farmacia y Consultas en un solo lugar confiable en Mixco.</p>
+                    <p>Brindamos soluciones integrales de salud, con enfoque en la calidad, accesibilidad y bienestar de nuestros pacientes en Mixco.</p>
                 </div>
-                
+
                 <div class="footer-column">
-                    <h4>Navegación</h4>
-                    <a href="#inicio">Inicio</a>
-                    <a href="#servicios">Servicios</a>
-                    <a href="#ubicacion">Ubicación y Contacto</a>
+                    <h4>Servicios Principales</h4>
+                    <a href="#servicios">Medicina General</a>
+                    <a href="#servicios">Laboratorio Clínico</a>
+                    <a href="#servicios">Ultrasonidos</a>
+                    <a href="#servicios">Farmacia</a>
                 </div>
-                
+
                 <div class="footer-column">
-                    <h4>Contacto</h4>
-                    <a href="tel:22506601">Llamada: 2250-6601</a>
-                    <a href="https://wa.me/43811538" target="_blank">WhatsApp: 4381-1538</a>
-                    <p>Lun-Vie: 7:00 - 18:00</p>
-                    <p>Sábados: 8:00 - 13:00</p>
+                    <h4>Información de Contacto</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 4 calle 6-58, Mixco 01057</p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:22506601">2250-6601</a></p>
+                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/43811538" target="_blank">4381-1538</a></p>
                 </div>
 
                 <div class="footer-column">
@@ -661,18 +685,17 @@
                         <a href="https://www.facebook.com/share/1QcMNy88pA/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/centromedicoeltesoro?igsh=ZXNreTA3MHoxZnJ4" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.tiktok.com/@centromedicoeltesoro?_t=ZM-90O2xLRAcCu&_r=1" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://whatsapp.com/channel/0029Vb75miRDJ6H8mcOdUy3I" target="_blank" title="Canal de Novedades"><i class="fas fa-bullhorn"></i></a>
                         <a href="https://wa.me/43811538" target="_blank" title="WhatsApp Directo"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://whatsapp.com/channel/0029Vb75miRDJ6H8mcOdUy3I" target="_blank" title="Canal de Novedades"><i class="fas fa-bullhorn"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="copyright">
-                © 2025 Centro Médico y Laboratorio El Tesoro. Todos los derechos reservados.
-            </div>
+            
+            <p class="copyright">© 2025 Centro Médico y Laboratorio El Tesoro. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/43811538" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
+    <a href="https://wa.me/43811538" class="whatsapp-float" target="_blank" title="Chatea con nosotros">
         <i class="fab fa-whatsapp"></i>
     </a>
 
