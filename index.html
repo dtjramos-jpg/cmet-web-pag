@@ -171,16 +171,14 @@
         /* SECCIÓN HÉROE (Principal) */
         /* ---------------------------------- */
         .hero-section {
-            /* **CSS DEFINITIVO PARA FONDO:** (Asumiendo que 'fondo_cmet.webp' es 1920px) */
-            
-            /* Define el apilamiento de fondos: Gradiente (capa superior) y la imagen WebP (capa inferior) */
+            /* **SOLUCIÓN DEFINITIVA Y FORZADA:** 1. Usa el archivo JPG original (alto tamaño/calidad).
+               2. El parámetro '?v=4' fuerza al navegador a recargar el archivo y no usar el caché. */
             background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), 
-                              url('fondo_cmet.webp');
+                              url('fondo_cmet.jpg?v=4'); 
             
-            /* Define cómo se debe mostrar el fondo */
             background-position: center center;
             background-repeat: no-repeat;
-            background-size: cover; /* Esto garantiza que la imagen (1920px) cubra el área sin estirarse *si el archivo es 1920px* */
+            background-size: cover; /* Esto garantiza que cubra toda el área. */
 
             padding: 100px 0;
             text-align: center;
