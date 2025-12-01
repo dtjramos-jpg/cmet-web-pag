@@ -268,10 +268,11 @@
         /* ---------------------------------- */
         /* UBICACIÓN Y MAPAS (ESTILOS CORREGIDOS) */
         /* ---------------------------------- */
-        .location-grid { /* Nuevo nombre de clase para la grilla de ubicación */
+        .location-grid { 
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
+            padding: 20px 0; /* Añadir padding para separación */
         }
 
         .location-info h3 {
@@ -288,6 +289,21 @@
         .location-info i {
             margin-right: 10px;
             font-size: 1.1em;
+        }
+        
+        /* Estilos para el Mapa */
+        .map-container {
+            padding: 0; /* Remueve cualquier padding extra */
+        }
+
+        .map-container iframe {
+            display: block;
+            width: 100%;
+            max-width: 100%; /* Asegura que no se desborde */
+            height: 450px;
+            border: 0; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .map-buttons {
@@ -413,11 +429,12 @@
             .services-grid {
                 grid-template-columns: 1fr; 
             }
-            /* CORRECCIÓN #1: La grilla de ubicación pasa a una sola columna */
+            /* AJUSTE FINAL UBICACIÓN: Pasa a una sola columna */
             .location-grid { 
                 grid-template-columns: 1fr; 
+                gap: 20px;
             }
-            /* CORRECCIÓN #2: El Footer pasa a dos columnas */
+            /* El Footer pasa a dos columnas */
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr); 
             }
@@ -430,7 +447,7 @@
             }
         }
         @media (max-width: 500px) {
-            /* CORRECCIÓN #3: El Footer pasa a una columna en móviles muy pequeños */
+            /* El Footer pasa a una columna en móviles muy pequeños */
             .footer-grid {
                 grid-template-columns: 1fr; 
             }
@@ -607,7 +624,7 @@
             
             <div class="location-grid"> 
                 <div class="location-info">
-                    <h3>Información de Contacto</h3>
+                    <h3 style="margin-bottom: 15px;">Información de Contacto</h3>
                     <p><i class="fas fa-map-marker-alt" style="color: var(--color-principal);"></i> Dirección: 4 calle 6-58, Mixco 01057</p>
                     <p><i class="fas fa-phone-alt" style="color: var(--color-principal);"></i> Teléfono: <a href="tel:22506601">2250-6601</a></p>
                     <p><i class="fab fa-whatsapp" style="color: var(--color-principal);"></i> WhatsApp: <a href="https://wa.me/43811538" target="_blank">4381-1538</a></p>
@@ -626,12 +643,9 @@
                     </div>
                 </div>
 
-                <div style="padding: 20px;">
+                <div class="map-container">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.855013149492!2d-90.58784302528741!3d14.717056085818315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a19c623c1031%3A0xc682255740441d63!2sCentro%20M%C3%A9dico%20y%20Laboratorio%20El%20Tesoro!5e0!3m2!1ses!2sgt!4v1709230537443!5m2!1ses!2sgt" 
-                        width="100%" 
-                        height="450" 
-                        style="border:0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);" 
                         allowfullscreen="" 
                         loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade">
