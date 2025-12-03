@@ -188,7 +188,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 1; /* Detrás del contenido */
-            /* filter: brightness(1.1); <--- ELIMINADO para mantener el brillo natural */
+            /* Se eliminó el filtro de brillo (brightness) para que la imagen se vea natural */
         }
 
         /* Overlay para mayor legibilidad */
@@ -505,10 +505,11 @@
     </header>
     
     <main> <section id="inicio" class="hero-section">
-            <picture>
-                <source srcset="fondo_optimo.webp" type="image/webp">
-                <img src="fondo_optimo.jpeg" alt="Médicos con batas, listos para atenderte" class="hero-background-img" fetchpriority="high">
-            </picture>
+            <img src="fondo_optimo.webp" 
+                 alt="Médicos con batas, listos para atenderte" 
+                 class="hero-background-img" 
+                 fetchpriority="high">
+            
             <div class="hero-overlay"></div>
 
             <div class="container hero-content">
