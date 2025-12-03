@@ -171,12 +171,11 @@
         /* SECCIÓN HÉROE (Principal) */
         /* ---------------------------------- */
         .hero-section {
-            /* Se ha movido el fondo a la etiqueta <picture> para optimización */
             padding: 100px 0;
             text-align: center;
             border-bottom: 5px solid var(--color-principal);
-            position: relative; /* Necesario para posicionar el fondo */
-            overflow: hidden; /* Ocultar partes del fondo que puedan salirse */
+            position: relative; 
+            overflow: hidden; 
             color: var(--color-texto);
         }
 
@@ -189,7 +188,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 1; /* Detrás del contenido */
-            filter: brightness(1.5); /* Aclarar la imagen */
+            filter: brightness(1.1); /* AJUSTE FINAL DE BRILLO: Menos brillante */
         }
 
         /* Overlay para mayor legibilidad */
