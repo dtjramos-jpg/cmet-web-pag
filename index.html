@@ -7,8 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==
-" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
         /* Variables y Reset Básico */
@@ -172,7 +171,7 @@
         /* SECCIÓN HÉROE (Principal) */
         /* ---------------------------------- */
         .hero-section {
-            /* **SOLUCIÓN FINAL: IMAGEN ELEGANTE CON OVERLAY CLARO Y TEXTO LEGIBLE** */
+            /* **USANDO EL NUEVO NOMBRE DE ARCHIVO OPTIMIZADO: fondo_optimo.jpeg** */
             /* 1. Capa de color (Overlay) para legibilidad (BLANCO al 80% de opacidad) */
             background: 
                 linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
@@ -445,10 +444,11 @@
             .footer-grid {
                 grid-template-columns: 1fr; 
             }
-            /* **CAMBIO AQUÍ: Ocultamos solo el botón de Llámanos para dejar espacio al logo, redes y WhatsApp.** */
+            /* **CORRECCIÓN:** Ocultamos SOLO el botón de Llámanos para dejar espacio al logo, redes y WhatsApp. */
             .call-button { 
                 display: none; 
             }
+            /* El contenedor principal .header-contact-buttons no tiene 'display: none;' */
         }
     </style>
 </head>
@@ -499,7 +499,7 @@
             <p class="section-subtitle">Atención integral y personalizada, garantizando diagnósticos precisos por profesionales con experiencia.</p>
 
             <div class="services-grid">
-                
+
                 <div class="service-card">
                     <img src="farmacia.jpg" alt="Farmacia" class="card-image"> 
                     <div class="card-content">
@@ -646,7 +646,8 @@
                         height="350" 
                         style="border:0;" 
                         allowfullscreen="" 
-                        loading="lazy">
+                        loading="lazy"
+                        title="Ubicación de Centro Médico El Tesoro">
                     </iframe>
                 </div>
             </div>
