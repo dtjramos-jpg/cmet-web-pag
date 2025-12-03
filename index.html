@@ -171,29 +171,50 @@
         /* SECCIÓN HÉROE (Principal) */
         /* ---------------------------------- */
         .hero-section {
-            /* **SOLUCIÓN CON DEGRADADO SUTIL** (Blanco a Azul Pastel) */
-            background: linear-gradient(to bottom, var(--color-texto-claro) 0%, #e9f2fa 100%);
+            /* **SOLUCIÓN FINAL: IMAGEN ELEGANTE CON OVERLAY OSCURO PARA LEGIBILIDAD** */
+            /* 1. Capa de color (Overlay) para legibilidad (Azul principal al 80% de opacidad) */
+            background: 
+                linear-gradient(rgba(44, 93, 159, 0.8), rgba(44, 93, 159, 0.8)),
+                /* 2. Usamos tu imagen de fondo de alta resolución */
+                url('fondo_optimo.jpeg') no-repeat center center;
+            
+            /* Ajustes para cubrir toda la sección */
+            background-size: cover;
+            background-attachment: scroll;
             
             padding: 100px 0;
             text-align: center;
             border-bottom: 5px solid var(--color-principal);
+            color: var(--color-texto-claro); /* Texto principal debe ser BLANCO */
         }
 
         .hero-section h1 {
             font-size: 3em;
-            color: var(--color-principal);
+            color: var(--color-texto-claro); /* Título BLANCO */
             margin-bottom: 10px;
         }
 
         .hero-section p {
             font-size: 1.3em;
-            color: #555;
+            color: rgba(255, 255, 255, 0.9); /* Párrafos BLANCO suave */
             margin-bottom: 30px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             font-weight: 300;
         }
+
+        .hero-section p[style] {
+             /* Esto es para ¡Tu salud es nuestro mayor tesoro! y debe ser blanco */
+            color: var(--color-texto-claro) !important; 
+        }
+        
+        /* Estilo del botón de llamada a la acción en el Hero */
+        .hero-section .cta-button-header {
+            background-color: #25D366; /* Color de WhatsApp para que destaque */
+            border: 2px solid var(--color-texto-claro); /* Borde blanco para mayor contraste */
+        }
+
 
         /* ---------------------------------- */
         /* SECCIÓN SERVICIOS (Cuadrícula Profesional) */
@@ -241,7 +262,6 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            /* Nota: Mantengo los nombres de archivo en .jpg para que coincidan con la recomendación de optimización */
             border-bottom: 3px solid var(--color-principal); /* Borde de color en la imagen */
         }
 
@@ -478,7 +498,7 @@
             <p class="section-subtitle">Atención integral y personalizada, garantizando diagnósticos precisos por profesionales con experiencia.</p>
 
             <div class="services-grid">
-                
+
                 <div class="service-card">
                     <img src="farmacia.jpg" alt="Farmacia" class="card-image"> 
                     <div class="card-content">
