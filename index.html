@@ -117,7 +117,7 @@
         /* ---------------------------------- */
         /* ESTILOS ADICIONALES PARA REDES EN EL HEADER */
         /* ---------------------------------- */
-        .follow-text { /* NUEVO ESTILO: Texto Síguenos */
+        .follow-text { 
             font-weight: 500;
             color: var(--color-principal);
             padding-right: 5px;
@@ -171,22 +171,44 @@
         /* SECCIÓN HÉROE (Principal) */
         /* ---------------------------------- */
         .hero-section {
-            /* **USANDO EL NUEVO NOMBRE DE ARCHIVO OPTIMIZADO: fondo_optimo.jpeg** */
-            /* 1. Capa de color (Overlay) para legibilidad (BLANCO al 80% de opacidad) */
-            background: 
-                linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
-                /* 2. Usamos tu imagen de fondo de alta resolución */
-                url('fondo_optimo.jpeg') no-repeat center center;
-            
-            /* Ajustes para cubrir toda la sección */
-            background-size: cover;
-            background-attachment: scroll;
-            
+            /* Se ha movido el fondo a la etiqueta <picture> para optimización */
             padding: 100px 0;
             text-align: center;
             border-bottom: 5px solid var(--color-principal);
-            color: var(--color-texto); /* Texto principal debe ser OSCURO/NEGRO */
+            position: relative; /* Necesario para posicionar el fondo */
+            overflow: hidden; /* Ocultar partes del fondo que puedan salirse */
+            color: var(--color-texto);
         }
+
+        /* Estilos del fondo optimizado (WebP) */
+        .hero-background-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1; /* Detrás del contenido */
+            filter: brightness(1.5); /* Aclarar la imagen */
+        }
+
+        /* Overlay para mayor legibilidad */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8); /* Blanco al 80% de opacidad */
+            z-index: 2;
+        }
+        
+        /* Contenido debe estar por encima de la imagen y el overlay */
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
+
 
         .hero-section h1 {
             font-size: 3em;
@@ -444,11 +466,10 @@
             .footer-grid {
                 grid-template-columns: 1fr; 
             }
-            /* **CORRECCIÓN:** Ocultamos SOLO el botón de Llámanos para dejar espacio al logo, redes y WhatsApp. */
+            /* Ocultamos SOLO el botón de Llámanos para dejar espacio al logo, redes y WhatsApp. */
             .call-button { 
                 display: none; 
             }
-            /* El contenedor principal .header-contact-buttons no tiene 'display: none;' */
         }
     </style>
 </head>
@@ -484,177 +505,181 @@
         </div>
     </header>
     
-    <section id="inicio" class="hero-section">
-        <div class="container">
-            <h1>Centro Médico y Laboratorio El Tesoro</h1>
-            <p>Cuidamos tu salud con atención profesional y accesible, ponemos a tu disposición servicios médicos de calidad, realizados por especialistas comprometidos con tu bienestar y el de tu familia.</p>
-            <p style="font-weight: 700; font-size: 1.5em; color: var(--color-principal); margin-top: -15px;">¡Tu salud es nuestro mayor tesoro!</p>
-            <a href="#servicios" class="cta-button-header call-button" style="margin-top: 15px;">Explora Nuestros Servicios</a>
-        </div>
-    </section>
+    <main> <section id="inicio" class="hero-section">
+            <picture>
+                <source srcset="fondo_optimo.webp" type="image/webp">
+                <img src="fondo_optimo.jpeg" alt="Médicos con batas, listos para atenderte" class="hero-background-img" fetchpriority="high">
+            </picture>
+            <div class="hero-overlay"></div>
 
-    <section id="servicios" class="services-section">
-        <div class="container">
-            <h2 class="section-title">Nuestros Servicios Especializados</h2>
-            <p class="section-subtitle">Atención integral y personalizada, garantizando diagnósticos precisos por profesionales con experiencia.</p>
-
-            <div class="services-grid">
-
-                <div class="service-card">
-                    <img src="farmacia.jpg" alt="Farmacia" class="card-image"> 
-                    <div class="card-content">
-                        <h3>Farmacia</h3>
-                        <p>Contamos con medicamentos de calidad y personal capacitado para atender tus necesidades de salud.</p>
-                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Consulta Vía WhatsApp</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <img src="medicina_general.jpg" alt="Medicina General" class="card-image">
-                    <div class="card-content">
-                        <h3>Medicina General</h3>
-                        <p>Atención médica integral para toda la familia y manejo de enfermedades comunes.</p>
-                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <img src="laboratorio_clínico.jpg" alt="Laboratorio Clínico" class="card-image">
-                    <div class="card-content">
-                        <h3>Laboratorio Clínico</h3>
-                        <p>Exámenes confiables y rápidos con tecnología avanzada para diagnósticos precisos.</p>
-                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <img src="ultrasonidos.jpg" alt="Ultrasonidos" class="card-image">
-                    <div class="card-content">
-                        <h3>Ultrasonidos</h3>
-                        <p>Imágenes diagnósticas de alta precisión, esenciales para un diagnóstico completo y oportuno.</p>
-                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <img src="pediatría.jpg" alt="Pediatría" class="card-image">
-                    <div class="card-content">
-                        <h3>Pediatría</h3>
-                        <p>Atención especializada para niños y adolescentes con calidez y profesionalismo.</p>
-                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <img src="ginecología.jpg" alt="Ginecología" class="card-image">
-                    <div class="card-content">
-                        <h3>Ginecología</h3>
-                        <p>Cuidados y controles de salud femenina con sensibilidad y equipos modernos.</p>
-                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <img src="traumatología.jpg" alt="Traumatología" class="card-image">
-                    <div class="card-content">
-                        <h3>Traumatología</h3>
-                        <p>Diagnóstico y tratamiento de lesiones musculoesqueléticas y dolor crónico.</p>
-                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <img src="gastroenterología.jpg" alt="Gastroenterología" class="card-image">
-                    <div class="card-content">
-                        <h3>Gastroenterología</h3>
-                        <p>Salud digestiva, endoscopías y prevención de enfermedades del tracto digestivo.</p>
-                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
-                    </div>
-                </div>
-
-                 <div class="service-card">
-                    <img src="geriatría.jpg" alt="Geriatría" class="card-image">
-                    <div class="card-content">
-                        <h3>Geriatría</h3>
-                        <p>Atención integral especializada en la salud y bienestar de los adultos mayores.</p>
-                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <img src="nutricionista.jpg" alt="Nutricionista" class="card-image">
-                    <div class="card-content">
-                        <h3>Nutricionista</h3>
-                        <p>Planes de alimentación personalizados para mejorar su salud y calidad de vida.</p>
-                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <img src="medicina_interna.jpg" alt="Medicina Interna" class="card-image">
-                    <div class="card-content">
-                        <h3>Medicina Interna</h3>
-                        <p>Diagnóstico y tratamiento de enfermedades complejas en adultos y atención hospitalaria.</p>
-                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <img src="endoscopías_colonoscopías.jpg" alt="Endoscopías/Colonoscopías" class="card-image">
-                    <div class="card-content">
-                        <h3>Endoscopías y Colonoscopías</h3>
-                        <p>Procedimientos diagnósticos y terapéuticos no invasivos para el tracto digestivo.</p>
-                        <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
-                    </div>
-                </div>
-
+            <div class="container hero-content">
+                <h1>Centro Médico y Laboratorio El Tesoro</h1>
+                <p>Cuidamos tu salud con atención profesional y accesible, ponemos a tu disposición servicios médicos de calidad, realizados por especialistas comprometidos con tu bienestar y el de tu familia.</p>
+                <p style="font-weight: 700; font-size: 1.5em; color: var(--color-principal); margin-top: -15px;">¡Tu salud es nuestro mayor tesoro!</p>
+                <a href="#servicios" class="cta-button-header call-button" style="margin-top: 15px;">Explora Nuestros Servicios</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="ubicacion" class="services-section" style="background-color: #ffffff;">
-        <div class="container">
-            <h2 class="section-title" style="color: #333;">Estamos cerca de ti.</h2>
-            <div class="services-grid" style="grid-template-columns: 1fr 1fr; gap: 40px;">
-                <div style="text-align: left; padding: 20px;">
-                    <h3>Información de Contacto</h3>
-                    <p><i class="fas fa-map-marker-alt" style="color: var(--color-principal);"></i> Dirección: 4 calle 6-58, Mixco 01057</p>
-                    <p><i class="fas fa-phone-alt" style="color: var(--color-principal);"></i> Teléfono: 2250-6601</p>
-                    <p><i class="fab fa-whatsapp" style="color: var(--color-principal);"></i> WhatsApp: 4381-1538</p>
+        <section id="servicios" class="services-section">
+            <div class="container">
+                <h2 class="section-title">Nuestros Servicios Especializados</h2>
+                <p class="section-subtitle">Atención integral y personalizada, garantizando diagnósticos precisos por profesionales con experiencia.</p>
+
+                <div class="services-grid">
+
+                    <div class="service-card">
+                        <img src="farmacia.jpg" alt="Farmacia" class="card-image"> 
+                        <div class="card-content">
+                            <h3>Farmacia</h3>
+                            <p>Contamos con medicamentos de calidad y personal capacitado para atender tus necesidades de salud.</p>
+                            <a href="https://wa.me/43811538" class="cta-button" target="_blank">Consulta Vía WhatsApp</a>
+                        </div>
+                    </div>
                     
-                    <h3 style="margin-top: 20px;">Horarios de Atención</h3>
-                    <p><i class="far fa-clock" style="color: var(--color-principal);"></i> Lunes a Viernes: 7:00 - 18:00</p>
-                    <p><i class="far fa-clock" style="color: var(--color-principal);"></i> Sábados: 8:00 - 13:00</p>
+                    <div class="service-card">
+                        <img src="medicina_general.jpg" alt="Medicina General" class="card-image">
+                        <div class="card-content">
+                            <h3>Medicina General</h3>
+                            <p>Atención médica integral para toda la familia y manejo de enfermedades comunes.</p>
+                            <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                        </div>
+                    </div>
 
-                    <a href="tel:22506601" class="cta-button call-button" style="display: block; margin-top: 25px; background-color: var(--color-principal);">
-                        <i class="fas fa-phone-alt"></i> Llámanos Ahora: 2250-6601
-                    </a>
-                    <div class="map-buttons">
-                        <a href="https://maps.app.goo.gl/XTpAUSxutpqLmxUR8" target="_blank" class="google-maps-btn">
-                            <i class="fas fa-map-marker-alt"></i> Abrir en Google Maps
-                        </a>
-                        <a href="https://ul.waze.com/ul?place=ChIJm_nOjuyjiYURa8ixSFH-A6I&ll=14.62718420%2C-90.58384720&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank" class="waze-btn">
-                            <i class="fab fa-waze"></i> Navegar con Waze
-                        </a>
+                    <div class="service-card">
+                        <img src="laboratorio_clínico.jpg" alt="Laboratorio Clínico" class="card-image">
+                        <div class="card-content">
+                            <h3>Laboratorio Clínico</h3>
+                            <p>Exámenes confiables y rápidos con tecnología avanzada para diagnósticos precisos.</p>
+                            <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="ultrasonidos.jpg" alt="Ultrasonidos" class="card-image">
+                        <div class="card-content">
+                            <h3>Ultrasonidos</h3>
+                            <p>Imágenes diagnósticas de alta precisión, esenciales para un diagnóstico completo y oportuno.</p>
+                            <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <img src="pediatría.jpg" alt="Pediatría" class="card-image">
+                        <div class="card-content">
+                            <h3>Pediatría</h3>
+                            <p>Atención especializada para niños y adolescentes con calidez y profesionalismo.</p>
+                            <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="ginecología.jpg" alt="Ginecología" class="card-image">
+                        <div class="card-content">
+                            <h3>Ginecología</h3>
+                            <p>Cuidados y controles de salud femenina con sensibilidad y equipos modernos.</p>
+                            <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="traumatología.jpg" alt="Traumatología" class="card-image">
+                        <div class="card-content">
+                            <h3>Traumatología</h3>
+                            <p>Diagnóstico y tratamiento de lesiones musculoesqueléticas y dolor crónico.</p>
+                            <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="gastroenterología.jpg" alt="Gastroenterología" class="card-image">
+                        <div class="card-content">
+                            <h3>Gastroenterología</h3>
+                            <p>Salud digestiva, endoscopías y prevención de enfermedades del tracto digestivo.</p>
+                            <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="geriatría.jpg" alt="Geriatría" class="card-image">
+                        <div class="card-content">
+                            <h3>Geriatría</h3>
+                            <p>Atención integral especializada en la salud y bienestar de los adultos mayores.</p>
+                            <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="nutricionista.jpg" alt="Nutricionista" class="card-image">
+                        <div class="card-content">
+                            <h3>Nutricionista</h3>
+                            <p>Planes de alimentación personalizados para mejorar su salud y calidad de vida.</p>
+                            <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <img src="medicina_interna.jpg" alt="Medicina Interna" class="card-image">
+                        <div class="card-content">
+                            <h3>Medicina Interna</h3>
+                            <p>Diagnóstico y tratamiento de enfermedades complejas en adultos y atención hospitalaria.</p>
+                            <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="endoscopías_colonoscopías.jpg" alt="Endoscopías/Colonoscopías" class="card-image">
+                        <div class="card-content">
+                            <h3>Endoscopías y Colonoscopías</h3>
+                            <p>Procedimientos diagnósticos y terapéuticos no invasivos para el tracto digestivo.</p>
+                            <a href="https://wa.me/43811538" class="cta-button" target="_blank">Agenda Cita Vía WhatsApp</a>
+                        </div>
                     </div>
 
                 </div>
-                <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-                    <iframe 
-                        src="https://maps.google.com/maps?q=Centro%20M%C3%A9dico%20El%20Tesoro%204%20calle%206-58,%20Mixco%2001057&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-                        width="100%" 
-                        height="350" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy"
-                        title="Ubicación de Centro Médico El Tesoro">
-                    </iframe>
+            </div>
+        </section>
+
+        <section id="ubicacion" class="services-section" style="background-color: #ffffff;">
+            <div class="container">
+                <h2 class="section-title" style="color: #333;">Estamos cerca de ti.</h2>
+                <div class="services-grid" style="grid-template-columns: 1fr 1fr; gap: 40px;">
+                    <div style="text-align: left; padding: 20px;">
+                        <h3>Información de Contacto</h3>
+                        <p><i class="fas fa-map-marker-alt" style="color: var(--color-principal);"></i> Dirección: 4 calle 6-58, Mixco 01057</p>
+                        <p><i class="fas fa-phone-alt" style="color: var(--color-principal);"></i> Teléfono: 2250-6601</p>
+                        <p><i class="fab fa-whatsapp" style="color: var(--color-principal);"></i> WhatsApp: 4381-1538</p>
+                        
+                        <h3 style="margin-top: 20px;">Horarios de Atención</h3>
+                        <p><i class="far fa-clock" style="color: var(--color-principal);"></i> Lunes a Viernes: 7:00 - 18:00</p>
+                        <p><i class="far fa-clock" style="color: var(--color-principal);"></i> Sábados: 8:00 - 13:00</p>
+
+                        <a href="tel:22506601" class="cta-button call-button" style="display: block; margin-top: 25px; background-color: var(--color-principal);">
+                            <i class="fas fa-phone-alt"></i> Llámanos Ahora: 2250-6601
+                        </a>
+                        <div class="map-buttons">
+                            <a href="https://maps.app.goo.gl/XTpAUSxutpqLmxUR8" target="_blank" class="google-maps-btn">
+                                <i class="fas fa-map-marker-alt"></i> Abrir en Google Maps
+                            </a>
+                            <a href="https://ul.waze.com/ul?place=ChIJm_nOjuyjiYURa8ixSFH-A6I&ll=14.62718420%2C-90.58384720&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank" class="waze-btn">
+                                <i class="fab fa-waze"></i> Navegar con Waze
+                            </a>
+                        </div>
+
+                    </div>
+                    <div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Centro%20M%C3%A9dico%20El%20Tesoro%204%20calle%206-58,%20Mixco%2001057&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="350" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            title="Ubicación de Centro Médico El Tesoro"> </iframe>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <footer class="main-footer">
+        </section>
+    </main> <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
